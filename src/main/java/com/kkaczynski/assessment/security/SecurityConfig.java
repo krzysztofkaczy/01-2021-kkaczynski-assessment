@@ -14,7 +14,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
-     * @return basic 3 users USER ,ADMIN ,EDITOR
+     * @return basic 3 users USER ,ADMIN ,HR
      */
     @Bean
     public UserDetailsService userDetailsService() {
