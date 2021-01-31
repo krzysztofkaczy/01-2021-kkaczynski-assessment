@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @Getter
 @Entity
 @ToString
-public class Role {
+public class Position {
 
     @Id
     @Column(nullable = false)
@@ -24,7 +24,7 @@ public class Role {
 
     private String name;
 
-    public Role(String name) {
+    public Position(String name) {
         this.name = name;
     }
 

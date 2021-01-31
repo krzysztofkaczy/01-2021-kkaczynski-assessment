@@ -19,7 +19,7 @@ public class Department {
     private Long id;
 
     private String name;
-
+    @ManyToOne(cascade = CascadeType.ALL)
     private Address localization;
 
     public Department(String name, Address localization) {
@@ -31,7 +31,7 @@ public class Department {
         this.name = name;
     }
 
-    @JoinColumn
+
     public void setLocalization(Address localization) {
         this.localization = localization;
     }

@@ -23,16 +23,16 @@ public class Address {
 
     private String street;
 
-    private String homeNumber;
+    private String houseNumber;
 
-    private String zipCode;
+    private String postalCode;
 
     private String city;
 
-    public Address(String street, String homeNumber, String zipCode, String city) {
+    public Address(String street, String houseNumber, String postalCode, String city) {
         this.street = street;
-        this.homeNumber = homeNumber;
-        this.zipCode = zipCode;
+        this.houseNumber = houseNumber;
+        this.postalCode = postalCode;
         this.city = city;
     }
 
@@ -40,12 +40,12 @@ public class Address {
         this.street = street;
     }
 
-    public void setHomeNumber(String homeNumber) {
-        this.homeNumber = homeNumber;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public void setCity(String city) {
