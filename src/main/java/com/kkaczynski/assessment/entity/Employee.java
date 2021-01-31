@@ -38,7 +38,6 @@ public class Employee {
     private Department department;
     @ManyToOne(cascade = CascadeType.ALL)
     private Position position;
-// TODO: 30.01.2021 connect to database and add FK
     public Employee(CSVRecord csvMap) {
         this.name = csvMap.get("id");
         this.surname = csvMap.get("surname");
