@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RestController(value = "/employee")
+@RestController()
 public class EmployeeApi {
 
     private static final String INTERNAL_SYSTEM_ERROR = "Internal System Error";
@@ -18,19 +18,19 @@ public class EmployeeApi {
     private EmployeeService employeeService;
 
 
-    @PostMapping
+    @PostMapping(value = "/employee/create")
     ResponseEntity<ApiResponse> createEmployee(@RequestBody Employee employee) {
         ApiResponse.Status status = employeeService.createEmployee(employee);
         return createResponse("Employee deleted", status, Optional.empty());
     }
 
-    @DeleteMapping
+    @DeleteMapping(value = "/employee/delete")
     ResponseEntity<ApiResponse> deleteEmployee(@PathVariable Long employeeId) {
         ApiResponse.Status status = employeeService.deleteEmployee(employeeId);
         return createResponse("Employee deleted", status, Optional.empty());
     }
 
-    @GetMapping
+    @GetMapping(value = "/employee/get")
     ResponseEntity<ApiResponse> getEmployee(@PathVariable Long employeeId) {
         Optional<Employee> employeeOpt = employeeService.getEmployee(employeeId);
         ResponseEntity<ApiResponse> response;
@@ -41,7 +41,7 @@ public class EmployeeApi {
         return response;
     }
 
-    @PutMapping
+    @PutMapping(value = "/employee/update")
     ResponseEntity<ApiResponse> updateEmployee(@RequestBody Employee employee) {
         ApiResponse.Status status = employeeService.update(employee);
         ResponseEntity<ApiResponse> response = createResponse("Employee Updated", status, Optional.of(employee));

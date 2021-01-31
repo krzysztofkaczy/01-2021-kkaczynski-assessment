@@ -12,19 +12,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@Controller(value = "/csv")
+@Controller()
 public class ImportExportController {
 
     @Autowired
     private CsvService csvService;
 
-    @PostMapping
+    @PostMapping(value = "/csv/import")
     public void importEmployees(HttpServletRequest request) throws IOException {
         BufferedReader reader = request.getReader();
         csvService.importCsv(reader);
     }
 
-    @GetMapping
+    @GetMapping(value = "/csv/export")
     public void exportEmployees(HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
         csvService.exportCsv(writer);
